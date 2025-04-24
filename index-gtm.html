@@ -9,7 +9,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 </head>
 
-
+<script>
+const fetchPromise = window.fetch('https://dstanley.xyz', {
+  method: 'HEAD',
+  //mode: 'no-cors',
+});
+if (fetchPromise) {
+  fetchPromise
+    .then((response: Response) => {
+      console.log('fetch response: ', response);
+      console.log('fetch response headers: ', response.headers);
+    })
+    .catch((error) => {
+      console.log('fetch error: ', error);
+    });
+}
+</script>
 
 <body>
 <!-- Google Tag Manager (noscript) -->
