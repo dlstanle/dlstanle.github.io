@@ -10,6 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <script>
+let isCdn = false;
 const fetchPromise = window.fetch('https://dstanley.xyz', {
   method: 'HEAD',
   //mode: 'no-cors',
@@ -19,7 +20,8 @@ if (fetchPromise) {
     .then((response) => {
       console.log('fetch response: ', response);
       console.log('fetch response headers: ', response.headers);
-    })
+      isCdn = response.headers.has('CF-RAY');
+})
     .catch((error) => {
       console.log('fetch error: ', error);
     });
