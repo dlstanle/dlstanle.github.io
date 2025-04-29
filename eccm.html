@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Page</title>
+  <!-- Global site tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16548767634"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16548767634');
+  </script>
+  
+  <!-- Event snippet for Purchase conversion page -->
+  <script>
+  	function sendConversion() {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16548767634/9TaICKCKmrMaEJLPiNM9',
+          'value': 1.0,
+          'currency': 'TWD'
+      });
+    }
+    
+    function sendFormSubmit() {
+      gtag('event','form_submit', {form_id: 'email'});
+    }
+    
+  </script>
+  </head>
+  <body>
+    <h1>OGT AW-16548767634 test for User data </h1>
+    
+    <form action="/user-data.html" id="foo" method="GET">
+    input: <input type="email" id="email" name="email"><br>
+    phone: <span name="tel" value="9899971145">989 997 1145</span>
+    email: <span name="email" value="zhan@googe.com">zhan@googe.com</span>
+    <input type="submit" value="Submit">
+    <button type="button" onClick="sendConversion()">Send converstion to AW-16548767634</button>
+    <button type="button" onClick="sendFormSubmit()">Send gtag form submit event</button>
+  </form>
+  </body>
+</html>
